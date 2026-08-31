@@ -8,16 +8,16 @@
 ## 1. What Is a Dictionary?
 
 ### 1.1 Structure and Syntax
-* A dictionary is an unordered collection of key-value pairs wrapped in curly braces (`{}`)[cite: 5].
-* Each key is connected to its value by a colon (`:`), and individual pairs are separated by commas[cite: 5].
-* Keys can map to any Python object, including numbers, strings, lists, or other dictionaries[cite: 5].
+* A dictionary is an unordered collection of key-value pairs wrapped in curly braces (`{}`).
+* Each key is connected to its value by a colon (`:`), and individual pairs are separated by commas.
+* Keys can map to any Python object, including numbers, strings, lists, or other dictionaries.
 
 ```python
 alien_0 = {'color': 'green', 'points': 5}
 ```
 
 ### 1.2 Accessing Values
-* Values are retrieved by supplying the dictionary name followed by the desired key in square brackets: `dict_name[key]`[cite: 5].
+* Values are retrieved by supplying the dictionary name followed by the desired key in square brackets: `dict_name[key]`.
 
 ```python
 alien_0 = {'color': 'green', 'points': 5}
@@ -26,8 +26,8 @@ print(alien_0['points'])  # Output: 5
 ```
 
 ### 1.3 Adding New Key-Value Pairs
-* Dictionaries are dynamic structures; new pairs can be defined at any point during program execution[cite: 5].
-* Key-value pairs can be added incrementally to an empty dictionary initialized as `{}`[cite: 5].
+* Dictionaries are dynamic structures; new pairs can be defined at any point during program execution.
+* Key-value pairs can be added incrementally to an empty dictionary initialized as `{}`.
 
 ```python
 alien_0 = {'color': 'green', 'points': 5}
@@ -37,7 +37,7 @@ print(alien_0)  # Output: {'color': 'green', 'points': 5, 'y_position': 25, 'x_p
 ```
 
 ### 1.4 Modifying Values
-* Reassigning a value is performed by referencing an existing key and assigning a new value[cite: 5].
+* Reassigning a value is performed by referencing an existing key and assigning a new value.
 
 ```python
 alien_0 = {'color': 'green', 'speed': 'medium', 'x_position': 0}
@@ -54,7 +54,7 @@ alien_0['x_position'] = alien_0['x_position'] + x_increment
 ```
 
 ### 1.5 Removing Key-Value Pairs with `del`
-* The `del` statement permanently deletes a specific key-value pair from memory[cite: 5].
+* The `del` statement permanently deletes a specific key-value pair from memory.
 
 ```python
 alien_0 = {'color': 'green', 'points': 5}
@@ -63,7 +63,7 @@ print(alien_0)  # Output: {'color': 'green'}
 ```
 
 ### 1.6 Structuring Dictionaries of Similar Objects
-* Dictionaries can store one kind of attribute for many independent objects, formatted with multi-line indentation for readability[cite: 5].
+* Dictionaries can store one kind of attribute for many independent objects, formatted with multi-line indentation for readability.
 
 ```python
 favorite_languages = {
@@ -79,7 +79,7 @@ favorite_languages = {
 ## 2. Looping Through a Dictionary
 
 ### 2.1 Looping Through Key-Value Pairs (`.items()`)
-* The `.items()` method returns an iterable sequence of key-value tuples, unpacked into two distinct loop variables[cite: 5].
+* The `.items()` method returns an iterable sequence of key-value tuples, unpacked into two distinct loop variables.
 
 ```python
 user_0 = {
@@ -94,8 +94,8 @@ for key, value in user_0.items():
 ```
 
 ### 2.2 Looping Through Keys (`.keys()`)
-* The `.keys()` method returns an iterable sequence containing only the dictionary keys[cite: 5].
-* Iterating over keys is the default behavior when looping directly through a dictionary object (`for name in dict:` is equivalent to `for name in dict.keys():`)[cite: 5].
+* The `.keys()` method returns an iterable sequence containing only the dictionary keys.
+* Iterating over keys is the default behavior when looping directly through a dictionary object (`for name in dict:` is equivalent to `for name in dict.keys():`).
 
 ```python
 favorite_languages = {
@@ -110,7 +110,7 @@ for name in favorite_languages.keys():
 ```
 
 ### 2.3 Looping Through Keys in Sorted Order
-* Wrapping `sorted()` around `.keys()` orders the dictionary keys alphabetically for display without modifying the dictionary itself[cite: 5].
+* Wrapping `sorted()` around `.keys()` orders the dictionary keys alphabetically for display without modifying the dictionary itself.
 
 ```python
 favorite_languages = {
@@ -125,8 +125,8 @@ for name in sorted(favorite_languages.keys()):
 ```
 
 ### 2.4 Looping Through Values (`.values()`) and Sets
-* The `.values()` method retrieves values without their corresponding keys, which may include duplicate entries[cite: 5].
-* Wrapping `set()` around `.values()` discards duplicate elements, leaving only unique values[cite: 5].
+* The `.values()` method retrieves values without their corresponding keys, which may include duplicate entries.
+* Wrapping `set()` around `.values()` discards duplicate elements, leaving only unique values.
 
 ```python
 favorite_languages = {
@@ -145,8 +145,8 @@ for language in set(favorite_languages.values()):
 ## 3. Nesting Data Structures
 
 ### 3.1 A List of Dictionaries
-* Groups multiple dictionaries representing distinct entities inside a single list[cite: 5].
-* Allows dynamic batch generation and element modification using loops[cite: 5].
+* Groups multiple dictionaries representing distinct entities inside a single list.
+* Allows dynamic batch generation and element modification using loops.
 
 ```python
 # Create a fleet of 30 green aliens
@@ -164,7 +164,7 @@ for alien in aliens[:3]:
 ```
 
 ### 3.2 A List Inside a Dictionary
-* Enables associating multiple values with a single descriptive key[cite: 5].
+* Enables associating multiple values with a single descriptive key.
 
 ```python
 pizza = {
@@ -178,7 +178,7 @@ for topping in pizza['toppings']:
 ```
 
 ### 3.3 A Dictionary Inside a Dictionary
-* Maps unique parent keys (such as usernames) to inner dictionary records containing specific attributes[cite: 5].
+* Maps unique parent keys (such as usernames) to inner dictionary records containing specific attributes.
 
 ```python
 users = {
