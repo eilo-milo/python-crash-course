@@ -1,5 +1,3 @@
-<!-- Navigation -->
-[← Previous Chapter](chapter-02.md) | [Table of Contents](../README.md) | [Next Chapter →](chapter-04.md)
 
 ---
 
