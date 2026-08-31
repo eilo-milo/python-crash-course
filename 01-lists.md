@@ -148,5 +148,4 @@ print(len(cars))  # Output: 4
 
 ---
 
-<!-- Navigation Footer -->
-[← Previous Chapter](chapter-02.md) | [Table of Contents](../README.md) | [Next Chapter →](chapter-04.md)
+
