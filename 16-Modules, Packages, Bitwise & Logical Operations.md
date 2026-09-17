@@ -211,13 +211,13 @@ Bitwise operators manipulate integer data at the binary bit level (floating-poin
 A bit mask isolates or mutates targeted binary flags. To create a mask targeting the $n$-th bit index (0-indexed), use `mask = 1 << n` (e.g., targeting bit 3 gives $2^3 = 8$):
 
 * **Check Bit:** `flag_register & mask`  
-  Relies on $x \ \& \ 1 = x$ and $x \ \& \ 0 = 0$. Yields non-zero if set, `0` if unset.
+  Relies on `x & 1 = x` and `x & 0 = 0`. Yields non-zero if set, `0` if unset.
 * **Reset / Clear Bit:** `flag_register &= ~mask`  
-  `~mask` leaves zeros only at target indexes, zeroing targeted bits while leaving others untouched.
+  `~mask` puts zeros only at target indices and ones everywhere else, zeroing target bits while leaving others untouched.
 * **Set Bit:** `flag_register |= mask`  
-  Forces target bit positions to `1`.
+  Relies on `x | 1 = 1` and `x | 0 = x`. Forces target bit positions to `1`.
 * **Toggle / Invert Bit:** `flag_register ^= mask`  
-  Flips the target bit ($0 \leftrightarrow 1$) via XOR logic.
+  Relies on `x ^ 1 = ~x` and `x ^ 0 = x`. Flips the target bit ($0 \leftrightarrow 1$) via XOR logic.
 
 ---
 
