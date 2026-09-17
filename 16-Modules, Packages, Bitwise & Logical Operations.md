@@ -1,4 +1,4 @@
-
+# Python Reference Guide: Modules, Packages, Bitwise & Logical Operations
 
 ---
 
@@ -191,3 +191,61 @@ Logical operators evaluate whole expressions using short-circuit boolean semanti
 ```python
 not (p and q) == (not p) or (not q)
 not (p or q) == (not p) and (not q)
+```
+
+---
+
+## 6. Bitwise Operators (`&`, `|`, `^`, `~`)
+
+Bitwise operators manipulate integer data at the binary bit level (floating-point operands raise a `TypeError`).
+
+* `&` (Bitwise AND): Sets bit to `1` only if both bits are `1`.
+* `|` (Bitwise OR): Sets bit to `1` if at least one bit is `1`.
+* `^` (Bitwise XOR): Sets bit to `1` if operands have different bit values.
+* `~` (Bitwise NOT): Inverts all bits. Under two's complement notation, `~x` evaluates algebraically to `-(x + 1)` (e.g., `~15 == -16`).
+
+---
+
+## 7. Bit Manipulation Using Masks
+
+A bit mask isolates or mutates targeted binary flags. To create a mask targeting the $n$-th bit index (0-indexed), use `mask = 1 << n` (e.g., targeting bit 3 gives $2^3 = 8$):
+
+* **Check Bit:** `flag_register & mask`  
+  Relies on $x \ \& \ 1 = x$ and $x \ \& \ 0 = 0$. Yields non-zero if set, `0` if unset.
+* **Reset / Clear Bit:** `flag_register &= ~mask`  
+  `~mask` leaves zeros only at target indexes, zeroing targeted bits while leaving others untouched.
+* **Set Bit:** `flag_register |= mask`  
+  Forces target bit positions to `1`.
+* **Toggle / Invert Bit:** `flag_register ^= mask`  
+  Flips the target bit ($0 \leftrightarrow 1$) via XOR logic.
+
+---
+
+## 8. Binary Bit Shifting (`<<`, `>>`)
+
+Bit shifts move binary sequences along power-of-two boundaries:
+
+* **Left Shift (`var << n`):** Multiplies an integer by $2^n$, padding vacated rightmost bits with `0`.  
+  *Example:* `17 << 2` $\rightarrow 17 \times 2^2 = 68$.
+* **Right Shift (`var >> n`):** Floor-divides an integer by $2^n$, discarding rightmost trailing bits.  
+  *Example:* `17 >> 1` $\rightarrow 17 // 2^1 = 8$.
+* *Note:* Shift operations are not commutative (`a << b != b << a`).
+
+---
+
+## 9. Operator Priority Table
+
+Operators arranged from highest precedence (rank 1) to lowest precedence (rank 10):
+
+| Priority | Operators | Category |
+| :---: | :--- | :--- |
+| **1** | `~`, `+`, `-` | Unary bitwise NOT, unary positive / negative signs |
+| **2** | `**` | Exponentiation |
+| **3** | `*`, `/`, `//`, `%` | Multiplication, division, floor division, modulo |
+| **4** | `+`, `-` | Binary addition, subtraction |
+| **5** | `<<`, `>>` | Bitwise binary shifts |
+| **6** | `<`, `<=`, `>`, `>=` | Comparison (relational) |
+| **7** | `==`, `!=` | Equality / inequality tests |
+| **8** | `&` | Bitwise AND |
+| **9** | `\|` | Bitwise OR |
+| **10** | `=`, `+=`, `-=`, `*=`, `/=`, `%=`, `&=`, `^=`, `\|=`, `>>=`, `<<=` | Assignment and augmented assignment operators |
